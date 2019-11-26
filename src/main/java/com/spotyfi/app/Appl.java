@@ -15,7 +15,7 @@ public class Appl {
 		
 		List<Path> listPathSubdirectories = fsp.getSubdirectory(pathName);
 		
-		
+		System.out.println(listPathSubdirectories);
 	}
 
 }
