@@ -15,9 +15,9 @@ class FileSystemParserTest {
 		// fail("Not yet implemented");
 		String pathName = "./tests/test_subdirectories";
 		
-		FileSystemParser fsp = new FileSystemParser(pathName);
+		FileSystemParser fsp = new FileSystemParser();
 		
-		List<Path> listPathSubdirectories = fsp.getSubdirectory();
+		List<Path> listPathSubdirectories = fsp.getSubdirectory(pathName);
 		
 		assertEquals(2, listPathSubdirectories.size());
 		
@@ -29,6 +29,26 @@ class FileSystemParserTest {
 		assertTrue(listPathSubdirectories.contains(pathVasco));
 		assertFalse(listPathSubdirectories.contains(pathJannacci));
 				
+	}
+	
+	@Test
+	void testGetFilesInDirectory() {
+		
+        String pathDir = "./tests/test_files_in_directory";
+		
+        Path pDir = Paths.get(pathDir);
+        FileSystemParser fsp = new FileSystemParser();
+		
+		List<Path> filesInDirectory = fsp.getFilesInDirectory(pDir, "txt");
+		
+		Path pathFileBollicine = Paths.get(pathDir, "Bollicine.txt");
+		Path pathFileCosaSuccede = Paths.get(pathDir, "Cosa_succede_in_citta.txt");
+		Path pathFileVadoInMessico = Paths.get(pathDir, "Vado_in_messico.txt");
+		
+		assertEquals(2, filesInDirectory.size());
+		assertTrue(filesInDirectory.contains(pathFileBollicine));
+		assertFalse(filesInDirectory.contains(pathFileCosaSuccede));
+		assertTrue(filesInDirectory.contains(pathFileVadoInMessico));
 	}
 
 }

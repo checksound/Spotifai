@@ -11,9 +11,9 @@ public class Appl {
 				
 		String pathName = "C:\\Users\\PC610\\Dropbox";
 		
-		FileSystemParser fsp = new FileSystemParser(pathName);
+		FileSystemParser fsp = new FileSystemParser();
 		
-		List<Path> listPathSubdirectories = fsp.getSubdirectory();
+		List<Path> listPathSubdirectories = fsp.getSubdirectory(pathName);
 		
 		
 	}
