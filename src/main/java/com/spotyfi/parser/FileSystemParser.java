@@ -51,11 +51,12 @@ public class FileSystemParser {
 
 			@Override
 			public boolean accept(File pathname) {
+				
 				if(pathname.isDirectory())
 					return false;
 				
 				if (extension != null)
-				  return FilenameUtils.isExtension(pathDir.getFileName().toString(), extension);
+				  return FilenameUtils.isExtension(pathname.getName(), extension);
 				
 				return true;
 			}
