@@ -37,11 +37,12 @@ public class FileSystemParser {
 	}
 	
 	// fake implementation
+	/*
 	public List<Path> getFilesInDirectory(Path pathDir, String extension) {
 		return new ArrayList<Path>();
 	}
+	*/
 	
-	/*
 	public List<Path> getFilesInDirectory(Path pathDir, String extension) {
 		
 		File file = pathDir.toFile();
@@ -69,5 +70,4 @@ public class FileSystemParser {
 		return listPath;
 	}
 	
-	*/
 }
