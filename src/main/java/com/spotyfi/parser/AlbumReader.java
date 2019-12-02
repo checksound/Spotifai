@@ -48,7 +48,10 @@ public class AlbumReader {
 		
 		List<Song> listSongs = new AlbumParser().doGetSongs(linesAlbum);
 		
-		Album album = new Album(baseNameFile, 0);
+		AlbumNameParser albumNameParser = new AlbumNameParser(); 
+		AlbumNameParser.AlbumInfo albumInfo = albumNameParser.getAlbumInfo(baseNameFile);
+		
+		Album album = new Album(albumInfo.albunName, albumInfo.albumYear);
 		album.addSongs(listSongs);
 		return album;
 	}
