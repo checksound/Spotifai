@@ -12,7 +12,7 @@ import org.apache.commons.io.FilenameUtils;
 
 public class FileSystemParser {
 	
-	public List<Path> getSubdirectory(String pathFile) {
+	public List<Path> getSubdirectories(String pathFile) {
 		
 		File file = new File(pathFile);
 		

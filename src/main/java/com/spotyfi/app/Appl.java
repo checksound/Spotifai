@@ -13,7 +13,7 @@ public class Appl {
 		
 		FileSystemParser fsp = new FileSystemParser();
 		
-		List<Path> listPathSubdirectories = fsp.getSubdirectory(pathName);
+		List<Path> listPathSubdirectories = fsp.getSubdirectories(pathName);
 		
 		System.out.println(listPathSubdirectories);
 	}

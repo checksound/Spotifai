@@ -11,13 +11,13 @@ import org.junit.jupiter.api.Test;
 class FileSystemParserTest {
 
 	@Test
-	void testGetSubdirectory() {
+	void testGetSubdirectories() {
 		// fail("Not yet implemented");
 		String pathName = "./tests/test_subdirectories";
 		
 		FileSystemParser fsp = new FileSystemParser();
 		
-		List<Path> listPathSubdirectories = fsp.getSubdirectory(pathName);
+		List<Path> listPathSubdirectories = fsp.getSubdirectories(pathName);
 		
 		assertEquals(2, listPathSubdirectories.size());
 		
