@@ -24,7 +24,7 @@ public class Album {
 	}
 	
 	public void addSongs(List<Song> listSongs) {
-		listSongs.addAll(listSongs);
+		this.listSongs.addAll(listSongs);
 	}
 	
 	public void addSong(Song song) {

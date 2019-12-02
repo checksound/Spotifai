@@ -12,6 +12,7 @@ import java.util.List;
 import org.apache.commons.io.FilenameUtils;
 
 import com.spotyfi.model.Album;
+import com.spotyfi.model.Song;
 
 public class AlbumReader {
 	
@@ -21,7 +22,7 @@ public class AlbumReader {
 		
 		File fileAlbum = pathAlbum.toFile();
 		
-		List<String> lines = new ArrayList<>();
+		List<String> linesAlbum = new ArrayList<>();
 		
 		try (BufferedReader in
 				   = new BufferedReader(new FileReader(fileAlbum))){
@@ -33,7 +34,7 @@ public class AlbumReader {
 					continue;
 				}
 				
-				lines.add(line);
+				linesAlbum.add(line);
 				
 			}
 			
@@ -45,7 +46,11 @@ public class AlbumReader {
 			throw new AlbumParserException("Error reading file", e);
 		}
 		
-		return new Album(baseNameFile, 0);
+		List<Song> listSongs = new AlbumParser().doGetSongs(linesAlbum);
+		
+		Album album = new Album(baseNameFile, 0);
+		album.addSongs(listSongs);
+		return album;
 	}
 
 }
